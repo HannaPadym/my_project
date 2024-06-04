@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{sign}}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+
+{% block title%} {{sign}} {% endblock %}
+
+
+{% block content%}
 {% if description is None %}
-    <h2>Неправильный знак зодиака - {{ sign|upper }}</h2>
+<h2>Неправильный знак зодиака - {{ sign|upper }}</h2>
 {% else %}
-    <h2> {{ description|capfirst|safe }} </h2>
-{% endif %}
-</body>
-</html>
+<h2> {{ description|capfirst|safe }} </h2>
+{% endif %} {% endblock %}
